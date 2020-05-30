@@ -4,8 +4,6 @@ require "capistrano/setup"
 # Include default deployment tasks
 require "capistrano/deploy"
 
-require 'capistrano/ssh_doctor'
-
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
@@ -16,6 +14,12 @@ require 'capistrano/ssh_doctor'
 # or
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
+
+require "capistrano/rvm"
+require "capistrano/bundler"
+require "capistrano/rails/assets"
+require "capistrano/rails/migrations"
+require "capistrano/puma"
 
 # Include tasks from other gems included in your Gemfile
 #
