@@ -34,12 +34,21 @@ gem "sidekiq"
 gem "redis"
 
 #search
-gem "ransack", github: "activerecord-hackery/ransack"
+gem "ransack"
+
+gem 'ed25519', '~> 1.2'
+gem 'bcrypt_pbkdf', '~> 1'
 
 group :development, :test do
   gem "dotenv-rails"
   gem "faker"
   gem "pry-rails"
+  gem "capistrano"
+  gem "capistrano3-puma"
+  gem "capistrano-rails", require: false
+  gem "capistrano-bundler", require: false
+  gem "capistrano-rvm"
+  gem 'capistrano-ssh-doctor', '~> 1.0'
 end
 
 group :development do
